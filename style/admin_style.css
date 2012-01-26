@@ -1,0 +1,29 @@
+/*
+File:			style.css
+Description:	Custom style of Thesis Reviews plugin - admin page
+*/
+.clear { clear:both;}
+
+.fixed .column-rating, .fixed .column-visible {
+	width:20%;
+}
+.ta_rating { 
+	position: relative;
+	background: transparent url(../images/stars.png) 0 -16px repeat-x;
+	width: 80px;
+	height: 16px;
+	margin: 5px 0;
+}
+.ta_rating .result {
+	position: absolute;
+	background: transparent url(../images/stars.png) 0 0 repeat-x;
+	top: 0px;
+	left: 0px;
+	height: 16px;
+	z-index: 102;
+	text-indent: -9999px;
+}
+.required {
+	color: #72A1C6;
+	font-style:italic;
+}
