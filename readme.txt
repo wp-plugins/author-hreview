@@ -1,6 +1,6 @@
-=== Author Reviews ===
+=== Author hReview ===
 Contributors: Hesham Zebida
-Donate link: http://www.famousbloggers.net
+Donate link: http://authorhreview.com
 Tags: hreview, aggregate rating, author reviews, reviews, author, rating, rich snippets, google, seo
 Requires at least: 3.0
 Tested up to: 3.3
@@ -17,11 +17,14 @@ Add hReview and AggregateRating support based on schema.org, increase search tra
 
 == Frequently Asked Questions ==
 
-= Does this plugin work on any Wordpress theme? =
-Yes. It should work on any WordPress Theme
+= What the Author hReview plugin does? =
+Add hReview and AggregateRating support based on schema.org, increase search traffic by making SERP results more eye-catching. This plugin supports only the editorial ratings submission (author rating).
+
+= Is it going to work with my WordPress Theme? =
+It should work with any WordPress theme, however if you have trouble in the layout or the way the rating box or recent reviews widget are showing, let us know and we will help you fix the display.
 
 = I am having a problem getting it to work =
-Contact me via http://www.famousbloggers.net
+Contact me via http://authorhreview.com
 
 == Changelog ==
 = 0.0.6.1 =
@@ -61,5 +64,5 @@ first release
 
 == Upgrade Notice ==
 
-= 1.0 =
+= 0.0.6.1 =
 New Widget has been added to display recent reviews, also an option to display rating stars on home page, upgrade now.
