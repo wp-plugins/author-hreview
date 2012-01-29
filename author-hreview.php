@@ -1,18 +1,18 @@
 <?php
 	/*
 	Plugin Name: Author hReview
-    Plugin URI: http://www.famousbloggers.net
+    Plugin URI: http://authorhreview.com
     Description: Add support for hReview and AggregateRating based on schema.org.
-    Version: 0.0.6.1
+    Version: 0.0.7
     Author: Hesham Zebida
     Author URI: http://www.famousbloggers.net
-    Last Version update : 20 Jan 2011
+    Last Version update : 28 Jan 2011
     */
 	
     $thesisreviewspost_plugin_url = trailingslashit ( WP_PLUGIN_URL . '/' . dirname ( plugin_basename ( __FILE__ ) ) );
     $thesisreviewpost_widget_show = false;
 	$pluginname = 'Author hReview';
-	$plugin_version = '0.0.6.1';
+	$plugin_version = '0.0.7';
 	$ta_post_cpt = 'post';
 	$shortname = "awesome";
 	$rating = '';
@@ -34,7 +34,6 @@
 	require_once ('include/review_template.php');							// load review template
 	require_once ('include/review_widget.php');								// load widget functions
 	require_once ('include/review_column_preview.php');						// load column preview
-
 	
 	// ------------------------------------------------------------------------
 	// REQUIRE MINIMUM VERSION OF WORDPRESS:                                               
