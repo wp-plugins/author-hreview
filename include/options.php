@@ -23,8 +23,8 @@
 // Set-up Action and Filter Hooks
 //register_activation_hook(__FILE__, 'wpar_add_defaults');
 //register_uninstall_hook(__FILE__, 'wpar_delete_plugin_options');
-add_action('admin_init', 'wpar_init' );
-add_action('admin_menu', 'wpar_add_options_page');
+add_action( 'admin_init', 'wpar_init' );
+add_action( 'admin_menu', 'wpar_add_options_page' );
 add_filter( 'plugin_action_links', 'wpar_plugin_action_links', 10, 2 );
 
 // --------------------------------------------------------------------------------------
@@ -102,12 +102,15 @@ function wpar_add_options_page() {
 // Render the Plugin options form
 function wpar_render_form() {
 	?>
-	<div class="wrap">
+	<div class="wrap columns-2">
 		
 		<!-- Display Plugin Icon, Header, and Description -->
 		<div class="icon32" id="icon-options-general"><br></div>
 		<h2>Author hReview Settings</h2>
 		<p>Get more control over reviews.</p>
+        
+        <!-- options div -->
+        <div id="post-body-content" style="float:left;">
 
 		<!-- Beginning of the Plugin Options Form -->
 		<form method="post" action="options.php">
@@ -117,8 +120,8 @@ function wpar_render_form() {
 			<!-- Table Structure Containing Form Controls -->
 			<!-- Each Plugin Option Defined on a New Table Row -->
 			<table class="form-table">
-
-				<!-- Checkbox Buttons One -->
+            
+            	<!-- Checkbox Buttons One -->
 				<tr valign="top">
 					<th scope="row">Display settings</th>
 					<td>
@@ -200,29 +203,47 @@ function wpar_render_form() {
 				</tr>
                 -->
 			</table>
+            
 			<p class="submit">
 			<input type="submit" class="button-primary" value="<?php _e('Save Changes') ?>" />
 			</p>
 		</form>
+        </div>
 
-		<p style="margin-top:15px;">
+
+			<!-- sidebar stuff -->
+            <div id="poststuff" class="postbox arwp_admin">
+            	
+                
+                <?php /* <div class="handlediv" title="Click to toggle"><br></div> */ ?>
+				<h3 class="hndle"><span>Awesome!</span></h3>
+				
+                <div class="inside">
+                
+                	<?php if (wpar_fb_list_rss()) {echo wpar_fb_list_rss;} // FamousBloggers RSS display ?>
+                    <?php if (wpar_admin_links()) {echo wpar_admin_links;} // Extra admin links ?>
+
+                
+                	<!-- Twitter follow us button -->
+            		<div style="margin: auto;">
+						<a href="https://twitter.com/authorhreview"
+            			class="twitter-follow-button"
+            			data-show-count="true"
+       		    	 	data-lang="en"
+            			data-size="normal">Follow @AuthorhReview</a>
+						<script>!function(d,s,id)
+							{var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id))
+								{js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}
+								(document,"script","twitter-wjs");
+						</script>
+					</div>       
 			
-		<div style="float:right">
-			<a href="https://twitter.com/FamousBloggers"
-            class="twitter-follow-button"
-            data-show-count="true"
-            data-lang="en"
-            data-size="large">Follow @FamousBloggers</a>
-			<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-		</div>            
-            
-            <p style="font-style: italic;font-weight: bold;color: #26779a;">
-            	If you have found this plugin at all useful, please consider making a <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=44ALNG28WPN76" target="_blank" style="color:#72a1c6;">donation</a>. Thanks.
-			</p>
+            </div>        
+            </div>
+            </div>
+            <!-- end of sidebar stuff -->
+            <div class="clear"><br></div>
 
-		<div style="clear:both;"></div>
-        </p>
-        
 	</div>
 	<?php	
 }
@@ -245,5 +266,44 @@ function wpar_plugin_action_links( $links, $file ) {
 	}
 
 	return $links;
+}
+
+// FB RSS
+function wpar_fb_list_rss() {
+	include_once(ABSPATH.WPINC.'/rss.php'); // path to include script
+	$feed = fetch_rss('http://feeds.feedburner.com/FamousBloggers'); // specify feed url
+	$items = array_slice($feed->items, 0, 5); // specify first and last item
+	
+	if (!empty($items)) : ?>
+        <div class="wpar_fb_rss">
+        	<ul>
+				<?php foreach ($items as $item) : ?>
+					<li><p><a href="<?php echo $item['link']; ?>" title="<?php echo $item['description']; ?>" target="_blank"><?php echo $item['title']; ?></a></p></li>
+				<?php endforeach; ?>
+			</ul>              
+ 		</div>
+	<?php endif;
+}
+
+// Extra links for the plugin page
+function wpar_admin_links() { ?>
+	
+        <div class="wpar_admin_link">
+            <ul>
+				<li><p>
+                	<a href="http://wordpress.org/extend/plugins/author-hreview/" target="_blank"><p>Rate the plugin 5★ on WordPress.org</p></a></p>
+				</li>
+                <li class="wpar_blog"><p>
+                	<a href="http://authorhreview.com/" title="Author hReview" target="_blank"><p>Blog about it and link to the plugin site</p></a></p>
+				</li>
+                <li class="wpar_paypal"><p>
+                		<a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=44ALNG28WPN76" title="Author hReview" target="_blank">
+                    		Please, consider making a donation. Thanks!
+						</a>
+					</p>
+				</li>
+			</ul>              
+ 		</div>
+<?php
 }
 ?>
