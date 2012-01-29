@@ -24,9 +24,10 @@ function ta_review_post_data_row($column_name, $post_id) {
 	
     switch($column_name)
     {
-        case 'ratings':       
-
-			$rating = $custom["ta_post_review_rating"][0];
+        case 'ratings':
+		
+			if ((isset($custom["ta_post_review_rating"][0]))) {$rating = $custom["ta_post_review_rating"][0];} else {$rating = '';}	// get title
+			//$rating = $custom["ta_post_review_rating"][0];
 			if ($rating) {
 			$rating_star = $rating * 20;
 
