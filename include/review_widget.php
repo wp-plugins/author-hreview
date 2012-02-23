@@ -1,16 +1,13 @@
 <?php
 	/* reviews widget
 	*/
-function ta_wp_widgets_init() {
-	if ( !is_blog_installed() )
-		return;
 
-	register_widget('WP_Widget_Recent_Reviews');
+add_action( 'widgets_init', 'example_load_widgets' );		//load widget widget
 
-	do_action('widgets_init');
+// register the widget
+function example_load_widgets() {
+	register_widget( 'WP_Widget_Recent_Reviews' );
 }
-
-add_action('init', 'ta_wp_widgets_init', 1);
 
 /**
  * Recent_Reviews widget class

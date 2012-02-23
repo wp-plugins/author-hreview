@@ -1,18 +1,20 @@
 === Author hReview ===
-Contributors: Hesham Zebida
+Contributors: hishaman
 Donate link: http://authorhreview.com/about/donate/
-Tags: hreview, aggregate rating, author reviews, reviews, author, editor, rating, rich snippets, google, seo, microformat, microformats, snippets, snippet, google rich snippets, widget, search result, search engine, search,
+Tags: hreview, aggregate rating, author reviews, editor reviews, reviews, author, editor, rating, rich snippets, google, seo, microformat, microformats, snippets, snippet, google rich snippets, widget, search result, search engine, search, product reviews
 Requires at least: 3.0
 Tested up to: 3.3
-Stable tag: 0.0.7.2
+Stable tag: 0.0.8
 
 Add Google’s Rich Snippets for reviews for a better WordPress SEO, customize search results for more traffic and conversion.
 
 == Description ==
-Add hReview and AggregateRating support based on schema.org, increase search traffic by making SERP results more eye-catching. This plugin supports only the editorial ratings submission (edito/author rating), this means customers and site visitors are not involved in the rating process, this means rating reflects only the author opinion. This plugin is written by [Hesham Zebida](http://zebida.com/main/), the founder of FamousBloggers.net. See live demo in full action at [Famous Bloggers](http://www.famousbloggers.net/)'s blog.
+Add hReview and AggregateRating support based on schema.org, which help you increase search traffic by making SERP results more eye-catching. This plugin supports only the editorial ratings submission (edito/author rating), this means customers and site visitors are not involved in the rating or review process, this means rating reflects only the author's opinion. This plugin is written by [Hesham Zebida](http://zebida.com/main/), the founder of FamousBloggers.net.
+
+See live demo in full action at [Famous Bloggers](http://www.famousbloggers.net/)'s blog.
 
 = Why You Should Implement Rich Snippets =
-According to Google, rich snippets "extract and show more useful information from web pages than the preview text that you are used to seeing." Significantly, Google is using structured data open standards such as microformats and RDFa to power the rich snippets feature. It is inviting publishers to mark up their HTML and webmasters can find more details [here](http://googlewebmastercentral.blogspot.com/2011/12/rich-snippets-instructional-videos.html).
+According to Google, rich snippets "extract and show more useful information from web pages than the preview text that you are used to seeing." Significantly, Google is using structured data open standards such as microformats and RDFa to power the rich snippets feature. Google is is inviting publishers to mark up their HTML. Webmasters can find more detailed information about Google's rich snippets [here](http://googlewebmastercentral.blogspot.com/2011/12/rich-snippets-instructional-videos.html).
 
 = Google's Rich Snippets Testing Tool =
 After installing the plugin, and once you publish your first review on your blog, use Googl'e Rich Snippets [Testing Tool](http://www.google.com/webmasters/tools/richsnippets) to check your markup and make sure that Google can extract the structured data from your review. This tool will display a preview of how your review might appear in Google search results.
@@ -39,6 +41,15 @@ It should work with any WordPress theme, however if you have trouble in the layo
 Contact me via http://authorhreview.com
 
 == Changelog ==
+= 0.0.8 =
+* Fixed compatibility issues with other plugins.
+* Fixed button style to solve compatibility issues with themes.
+* Other CSS fixes.
+
+= 0.0.7.3 =
+* Fixed a duplicate function name.
+* Fixes to CSS styles.
+
 = 0.0.7.2 =
 * Minor fix.
 
@@ -96,5 +107,5 @@ first release
 
 == Upgrade Notice ==
 
-= 0.0.7.2 =
-Fixed a missing itemprop author (Google+ sharing issue solved), includes fixes for mini rating box. Upgrade now.
+= 0.0.7.4 =
+A few fixes has been added to the plugin inlcuding compatibility issues with other plugins. Please upgrade now.
