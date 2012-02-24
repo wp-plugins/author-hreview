@@ -2,10 +2,10 @@
 	/* reviews widget
 	*/
 
-add_action( 'widgets_init', 'example_load_widgets' );		//load widget widget
+add_action( 'widgets_init', 'ar_widget_recent_reviews' );		//load widget widget
 
 // register the widget
-function example_load_widgets() {
+function ar_widget_recent_reviews() {
 	register_widget( 'WP_Widget_Recent_Reviews' );
 }
 

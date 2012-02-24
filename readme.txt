@@ -4,7 +4,7 @@ Donate link: http://authorhreview.com/about/donate/
 Tags: hreview, aggregate rating, author reviews, editor reviews, reviews, author, editor, rating, rich snippets, google, seo, microformat, microformats, snippets, snippet, google rich snippets, widget, search result, search engine, search, product reviews
 Requires at least: 3.0
 Tested up to: 3.3
-Stable tag: 0.0.8
+Stable tag: 0.0.8.1
 
 Add Google’s Rich Snippets for reviews for a better WordPress SEO, customize search results for more traffic and conversion.
 
@@ -41,6 +41,9 @@ It should work with any WordPress theme, however if you have trouble in the layo
 Contact me via http://authorhreview.com
 
 == Changelog ==
+= 0.0.8.1 =
+* Fixed compatibility issues with Random / Rotating Ads V2 plugin.
+
 = 0.0.8 =
 * Fixed compatibility issues with other plugins.
 * Fixed button style to solve compatibility issues with themes.
@@ -107,5 +110,5 @@ first release
 
 == Upgrade Notice ==
 
-= 0.0.7.4 =
-A few fixes has been added to the plugin inlcuding compatibility issues with other plugins. Please upgrade now.
+= 0.0.8.1 =
+Fixed compatibility issues with Random / Rotating Ads V2 plugin. Please upgrade now.

@@ -3,16 +3,16 @@
 	Plugin Name: Author hReview
     Plugin URI: http://authorhreview.com
     Description: Add support for hReview and AggregateRating based on schema.org.
-    Version: 0.0.8
+    Version: 0.0.8.1
     Author: Hesham Zebida
     Author URI: http://www.famousbloggers.net
-    Last Version update : 23 Feb 2012
+    Last Version update : 24 Feb 2012
     */
 	
     $thesisreviewspost_plugin_url = trailingslashit ( WP_PLUGIN_URL . '/' . dirname ( plugin_basename ( __FILE__ ) ) );
     $thesisreviewpost_widget_show = false;
 	$pluginname = 'Author hReview';
-	$plugin_version = '0.0.8';
+	$plugin_version = '0.0.8.1';
 	$ta_post_cpt = 'post';
 	$shortname = "awesome";
 	$rating = '';
