@@ -56,8 +56,9 @@ function ta_post_rating($content) {
 			// things are good....
 			// let's do it........
 			// start our hReview main container div
-			$box = '<div class="review">
-					<div class="hreview" itemtype="http://schema.org/Review" itemscope="">';
+			$before_box = '<div class="review">';
+			$before_box .= '<div itemtype="http://schema.org/Product" itemscope="">';
+			$before_box .= '<div itemtype="http://schema.org/Review" itemscope="">';
 
 			// rating box start here
 			$box .= '<div class="ta_rating_container ' . $ta_box_align_class . '" style="width:' . $rating_box_width .'px;">
@@ -68,10 +69,7 @@ function ta_post_rating($content) {
 							
 								
 								<div>
-									Review of: <span class="title item fn" itemprop="itemreviewed">
-            						<a rel="nofollow" href="' . get_post_meta($post->ID, 'ta_post_review_url', TRUE) .'" 
-        							title="' . get_post_meta($post->ID, 'ta_post_review_name', TRUE) .'" 
-                					target="_blank">' . get_post_meta($post->ID, 'ta_post_review_name', TRUE) . '</a></span>
+									Review of: <span class="title item fn" itemprop="name"><a rel="nofollow" href="' . get_post_meta($post->ID, 'ta_post_review_url', TRUE) .'" title="' . get_post_meta($post->ID, 'ta_post_review_name', TRUE) .'" target="_blank">' . get_post_meta($post->ID, 'ta_post_review_name', TRUE) . '</a></span>
 								</div>
 								
 								<div class="clear"></div>';
@@ -94,12 +92,11 @@ function ta_post_rating($content) {
 						
 							// check review url field
 							if (get_post_meta($post->ID, 'ta_post_review_author', TRUE)) {
-							$box .= '<dd>
-									<span itemprop="author">' . get_post_meta($post->ID, 'ta_post_review_author', TRUE) . '</span>
-									</dd>';
-							$box .= '</dl>
-
-							<div class="clear"></div>';
+								$box .= '<dd>';
+								$box .= '<span>' . get_post_meta($post->ID, 'ta_post_review_author', TRUE) . '</span>';
+								$box .= '</dd>';
+								$box .= '</dl>';
+								$box .= '<div class="clear"></div>';
 							}
 							// end of check review url field
 							
@@ -121,65 +118,46 @@ function ta_post_rating($content) {
 							}
 						// end of check review version field
             
-            		$box .= '<div class="clear_space"></div><div class="hr"><hr /></div>
+            		$box .= '<div class="clear_space"></div><div class="hr"><hr /></div>';
+            		$box .= '<div>Reviewed by: <span class="reviewer author byline vcard hcard">';
+					$box .= '<span class="author me fn" itemprop="author">' . $review_author .'</span></span></div>';	
+					
+					$box .= '<dl>';
+					$box .= '<dt>Rating:</dt>';
+					$box .= '<dd>';
+					$box .= '<div class="ta_rating result rating" itemtype="http://schema.org/Rating" itemscope="" itemprop="reviewRating">';
+					$box .= '<meta content="1" itemprop="worstRating">';
+					$box .= '<meta content="' . $fb_rating . '" itemprop="ratingValue">';
+					$box .= '<meta content="5" itemprop="bestRating">';
+        			//$box .= '<meta content="1" itemprop="ratingCount">';
+					$box .= '<div class="result" style="width:' . $fb_rating_star . '%;" title="' . $rating . '">' . $rating . '</div>';
+					
+					$box .= '</div>';
+					$box .= '</dd></dl>';
+					$box .= '<div class="clear"></div>';
             
-            				<div>Reviewed by: <span class="reviewer author byline vcard hcard" itemprop="author"><span class="author me fn">' . $review_author .'</span></span>
-							</div>';
-							
-					$box .= '<dl>
-									<dt>Rating:</dt>
-
-									<dd>
-
-					<div class="ta_rating result rating" itemtype="http://schema.org/AggregateRating" itemprop="aggregateRating">
-						<meta content="1" itemprop="worstRating">
-						<meta content="' . $fb_rating . '" itemprop="ratingValue">
-						<meta content="' . $fb_rating . '" itemprop="bestRating">
-        				<meta content="1" itemprop="ratingCount">
-						<div class="result" style="width:' . $fb_rating_star . '%;" title="' . $rating . '" itemprop="rating">' . $rating . '</div>
-					</div>
-
-									</dd>
-								</dl>
-            
-        			<div class="clear"></div>';
-            
-            		$box .= '<div class="ta_headline_meta">On <span class="dtreviewed rating_date" itemprop="publishDate">
-            				<span class="published" title="' . get_the_time(get_option('date_format')) . '">' . get_the_time(get_option('date_format')) . '</span>
-							</span></div>
+            		$box .= '<div class="ta_headline_meta">On <span class="dtreviewed rating_date">';
+            		$box .= '<span class="published" title="' . get_the_time(get_option('date_format')) . '">' . get_the_time(get_option('date_format')) . '</span></span></div>';
         
-						<div class="ta_headline_meta">Last modified:
-            				<span class="dtmodified rating_date" itemprop="dateModified"> 
-                				<span class="updated" title="'. get_the_modified_time(get_option('date_format')) . '">' . get_the_modified_time(get_option('date_format')) . '
-								</span>
-                			</span>
-						</div>
+					$box .= '<div class="ta_headline_meta">Last modified:';
+					$box .= '<span class="dtmodified rating_date" itemprop="dateModified">';
+					$box .= '<span class="updated" title="'. get_the_modified_time(get_option('date_format')) . '">' . get_the_modified_time(get_option('date_format')) . '</span></span></div>';
+					$box .= '<div class="clear_space"></div>';
             
-            			<div class="clear_space"></div>';
-
-
-						
+            				$box .= '<div class="hr"><hr /></div>';
             
-            				$box .= '<div class="hr"><hr /></div>
-            
-    							<h3>Summary:</h3>
-
-								<div class="ta_description summary" itemprop="description">
-                					<p><span>' . get_post_meta($post->ID, 'ta_post_review_summary', TRUE) . '</span></p>
-								</div>
-
-							</div>
-
-							<div class="rating_btn">
-								<a itemprop="url" class="ar_button ar_' . $rating_box_btn_color . '" href="' . get_post_meta($post->ID, 'ta_post_review_url', TRUE) . '"
-								title="' . get_post_meta($post->ID, 'ta_post_review_name', TRUE) . '" target="_blank" rel="nofollow">More Details</a>
-							</div>
-
-							<div class="clear"></div>
-	
-    					</div>
-
-					</div>';
+    						$box .= '<h3>Summary:</h3>';
+							$box .= '<div class="ta_description summary" itemprop="description">';
+							$box .= '<p><span>' . get_post_meta($post->ID, 'ta_post_review_summary', TRUE) . '</span></p>';
+							$box .= '</div>';
+							$box .= '</div>';
+							
+							$box .= '<div class="rating_btn">';
+							$box .= '<a itemprop="url" class="ar_button ar_' . $rating_box_btn_color . '" href="' . get_post_meta($post->ID, 'ta_post_review_url', TRUE) . '" title="' . get_post_meta($post->ID, 'ta_post_review_name', TRUE) . '" target="_blank" rel="nofollow">More Details</a>';
+					$box .= '</div>';
+					$box .= '<div class="clear"></div>';
+					$box .= '</div>';
+					$box .= '</div>';
 					// here ends our rating box
 			
 			///////////////////////////////////////////////////////
@@ -189,61 +167,17 @@ function ta_post_rating($content) {
 			// add meta into the post
 			/////////////////////////
 			
-			$hideit = (isset($options['wpar_chk_rating_mini_post_display']));
+			$hideit = (isset($options['wpar_chk_rating_box_hide']));
 			
-			if (!$hideit) {	// show the rating box
+			if (!$hideit) {	// show the full rating box
 				
-				$content = $box . $content . '</div></div>';
+				$content = $before_box . $box . '<div itemprop="reviewBody">' . $content . '</div>' . '</div></div></div>';
 			} 
 			
 			else { // hide the rating box
 				
-				$hiddenmeta = ''; // define
-				
-				// main container div, before content
-				$beforecontent = '<div class="review">
-									<div class="hreview" itemtype="http://schema.org/Review" itemscope="">';
-				// rating meta
-				$beforecontent .='<div class="ta_rating_container ' . $ta_box_align_class . '" style="width:' . $rating_box_width .'px;">
-									<div id="ta_rating">
-										<div>';
-				
-				// iterm name
-				//$beforecontent .= '<span class="item"><span class="fn">' . get_post_meta($post->ID, 'ta_post_review_name', TRUE) . '</span></span>';
-				$beforecontent .= '<span class="item fn">
-										<a rel="nofollow" href="' . get_post_meta($post->ID, 'ta_post_review_url', TRUE) .'" 
-        								title="' . get_post_meta($post->ID, 'ta_post_review_name', TRUE) . '" 
-                						target="_blank">' . get_post_meta($post->ID, 'ta_post_review_name', TRUE) . '</a>
-									<span>';
-									
-				$beforecontent .= '<div class="ta_rating result rating" itemtype="http://schema.org/AggregateRating" itemprop="aggregateRating">';
-				$beforecontent .= '<meta content="1" itemprop="worstRating">';
-				$beforecontent .= '<meta content="' . $fb_rating . '" itemprop="ratingValue">';
-				$beforecontent .= '<meta content="' . $fb_rating . '" itemprop="bestRating">';
-				$beforecontent .= '<div class="result" style="width:' . $fb_rating_star . '%;" title="' . $rating . '" itemprop="rating">' . $rating . '</div>';
-				
-				$beforecontent .= '</div></div></div></div>';
-				
-				// adding hidden stuff...
-				
-				// rating
-				$hiddenmeta .= '<span class="rating"><span class="value-title" title="' . $fb_rating . '"></span></span>';
-				
-				//$hiddenmeta .= '<span class="reviewer"><span class="author me fn">' . $review_author .'</span></span>';
-				//$hiddenmeta .= '<span class="item"><span class="fn">' . get_post_meta($post->ID, 'ta_post_review_name', TRUE) . '</span></span>';
-				
-				// author
-				$hiddenmeta .= '<span class="reviewer"><span class="value-title" title="' . $review_author . '"></span></span>';
-				
-				$hiddenmeta .= '<span class="item"><span class="value-title" title="' . get_post_meta($post->ID, 'ta_post_review_name', TRUE) . '"></span></span>';
-				$hiddenmeta .= '<span class="summary"><span class="value-title" title="' . get_post_meta($post->ID, 'ta_post_review_summary', TRUE) . '"></span></span>';
-				
-				// dates
-				$hiddenmeta .= '<span class="dtreviewed"><span class="value-title" title="' . get_the_time(get_option('date_format')) . '"></span></span>';
-				$hiddenmeta .= '<span class="updated"><span class="value-title" title="' . get_the_modified_time(get_option('date_format')) . '"></span></span>';
-
-				
-				$content = $beforecontent. $content . $hiddenmeta . '</div></div>';
+				$content = $before_box.'<div class="ta_magic_review">'.$box.'</div><div itemprop="reviewBody">'.$content.'</div></div></div></div>';
+			
 			}
 			
 			// display box below post
@@ -321,7 +255,7 @@ function ta_post_add_more_snippet() {
 		
 		if (!$image) $image = ''; ?>
 
-<!-- Start Of Script Generated by Author hReview Plugin 0.0.8.1 by authorhreview.com -->
+<!-- Start Of Script Generated by Author hReview Plugin 0.0.9 by authorhreview.com -->
 <meta itemprop="name" content="<?php the_permalink(); ?>">
 <meta itemprop="description" content="<?php echo get_post_meta($post->ID, 'ta_post_review_summary', TRUE); ?>">
 <meta itemprop="summary" content="<?php echo get_post_meta($post->ID, 'ta_post_review_summary', TRUE); ?>">
@@ -338,7 +272,7 @@ function ta_post_add_more_snippet() {
 <meta property="og:site_name" content="<?php bloginfo('name'); ?>">
 <meta property="og:type" content="article">
 */ ?>
-<!-- End Of Script Generated by Author hReview Plugin 0.0.8.1 by authorhreview.com -->
+<!-- End Of Script Generated by Author hReview Plugin 0.0.9 by authorhreview.com -->
 	
 	<?php }
 	}

@@ -55,7 +55,7 @@ function wpar_add_defaults() {
     if(($tmp['wpar_chk_default_options_db']=='1')||(!is_array($tmp))) {
 		delete_option('wpar_options'); // so we don't have to reset all the 'off' checkboxes too! ( I don't think this is needed but leave for now)
 		$arr = array(	"wpar_chk_rating_home_display" => "1",
-						"wpar_chk_rating_mini_post_display" => "1",
+						"wpar_chk_rating_box_hide" => "",
 						"wpar_chk_rating_after_post_display" => "1",
 						"wpar_box_width" => "300",
 						"wpar_drp_box_align" => "right",
@@ -147,7 +147,7 @@ function wpar_render_form() {
 					<th scope="row"></th>
 					<td>
 						<!-- First checkbox button -->
-						<label><input name="wpar_options[wpar_chk_rating_mini_post_display]" type="checkbox" value="1" <?php if (isset($options['wpar_chk_rating_mini_post_display'])) { checked('1', $options['wpar_chk_rating_mini_post_display']); } ?> /> Switch to mini rating box?</label><br />
+						<label><input name="wpar_options[wpar_chk_rating_box_hide]" type="checkbox" value="1" <?php if (isset($options['wpar_chk_rating_box_hide'])) { checked('1', $options['wpar_chk_rating_box_hide']); } ?> /> Hide rating box?</label><br />
 
 
 					</td>

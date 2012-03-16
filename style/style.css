@@ -10,6 +10,12 @@ Description:	Custom style of Thesis Reviews plugin
 	clear:both;
 }
 
+/* do the magic */
+.ta_magic_review {
+	position:absolute;
+	left:-9999px;
+}
+
 /* rating style */
 .ta_rating_container {
 	border: 1px solid #E0E0E0;
