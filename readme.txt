@@ -6,7 +6,7 @@ Requires at least: 3.0
 Tested up to: 4.1.1
 Stable tag: 0.0.9.5
 
-Add Google Rich Snippets for reviews based on schema.org for a better WordPress SEO, customize search results with rating stars for more traffic and conversion.
+Add Google Rich Snippets for reviews and rating based on schema.org for a better WordPress SEO, more search traffic and conversion.
 
 == Description ==
 Add hReview and AggregateRating support based on schema.org, which help you increase search traffic by making SERP results more eye-catching. This plugin supports only the editorial ratings submission (editor/author rating), this means customers and site visitors are not involved in the rating or review process, this means rating reflects only the author's opinion. This plugin is written by [Hesham Zebida](http://zebida.com/).
