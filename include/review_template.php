@@ -77,10 +77,12 @@ function ta_post_rating($content) {
 			// start our hReview main container div
 			$before_box = '<div class="review">';
 			$before_box .= '<div itemtype="http://schema.org/Product" itemscope="">';
+			$ar_thing_name = get_post_meta($post->ID, 'ta_post_review_name', TRUE);
+			$before_box .= '<meta content="'.$ar_thing_name.'" itemprop="name">';
 			$before_box .= '<div itemtype="http://schema.org/Review" itemscope="">';
 
 			// rating box start here
-			$box .= '<div class="ta_rating_container ' . $ta_box_align_class . '" style="width:' . $rating_box_width .'px;">';
+			$box = '<div class="ta_rating_container ' . $ta_box_align_class . '" style="width:' . $rating_box_width .'px;">';
 			$box .= '<div id="ta_rating">';
 			$box .= '<div>';
 			$box .= '<div>Review of: <span class="title item fn" itemprop="name"><a rel="nofollow" href="' . get_post_meta($post->ID, 'ta_post_review_url', TRUE) .'" title="' . get_post_meta($post->ID, 'ta_post_review_name', TRUE) .'" target="_blank">' . get_post_meta($post->ID, 'ta_post_review_name', TRUE) . '</a></span></div>';
