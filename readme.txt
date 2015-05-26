@@ -20,7 +20,7 @@ Add hReview and AggregateRating support based on schema.org, which help you incr
 > View [WPRichSnippets Live Demo](http://demo.wprichsnippets.com/wprs/).
 
 = Why You Should Implement Rich Snippets =
-According to Google, rich snippets "extract and show more useful information from web pages than the preview text that you are used to seeing." Significantly, Google is using structured data open standards such as microformats and RDFa to power the rich snippets feature. Google is is inviting publishers to mark up their HTML. Webmasters can find more detailed information about Google's rich snippets [here](http://googlewebmastercentral.blogspot.com/2011/12/rich-snippets-instructional-videos.html).
+According to Google, rich snippets "extract and show more useful information from web pages than the preview text that you are used to seeing." Significantly, Google is using structured data open standards such as microformats and RDFa to power the rich snippets feature. Google is is inviting publishers to mark up their HTML. Webmasters can find more detailed information about Google rich snippets [here](http://googlewebmastercentral.blogspot.com/2011/12/rich-snippets-instructional-videos.html).
 
 = Google's Rich Snippets Testing Tool =
 After installing the plugin, and once you publish your first review on your blog, use Google Rich Snippets [Testing Tool](https://developers.google.com/structured-data/testing-tool/) to check your markup and make sure that Google can extract the structured data from your review. The plugin should validate in the Testing Tool.
