@@ -162,7 +162,7 @@ function ta_post_rating($content) {
             
     						$box .= '<h3>Summary:</h3>';
 							$box .= '<div class="ta_description summary" itemprop="description">';
-							$box .= '<p><span>' . get_post_meta($post->ID, 'ta_post_review_summary', TRUE) . '</span></p>';
+							$box .= '<p><span>' . str_replace("\n","<br />", get_post_meta($post->ID, 'ta_post_review_summary', TRUE)) . '</span></p>';
 							$box .= '</div>';
 							$box .= '</div>';
 							

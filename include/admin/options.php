@@ -130,7 +130,7 @@ function wpar_add_options_page() {
 		echo '<h2>Author hReview Settings <span style="font-size:10px;">Ver '. WPAR_VER.'</span></h2>';
 		echo '<p>Get more control over Google SERP.</p>';
 		
-		echo '<div class="updated" style="overflow: hidden;"><p class="alignleft">We have a new awesome plugin called <b><a href="http://authorhreview.com/plugins/wp-rich-snippets/" title="WP Rich Snippets" target="_blank">WP Rich Snippets</a></b>, which can be used to create amazing reviews sites. Enjoy high class support, more control over your reviews, half rating, templates, shortcodes, widgets, and more! <br/><br/> <b><a class="button-primary" href="http://authorhreview.com/plugins/wp-rich-snippets/" title="WP Rich Snippets Plugin" target="_blank">Click here for more info</a></b></p></div>';
+		echo '<div class="updated" style="overflow: hidden;"><p class="alignleft">We have a new awesome plugin called <b><a href="https://wprichsnippets.com/" title="WPRichSnippets" target="_blank">WPRichSnippets</a></b>, which can be used to create amazing reviews sites. Enjoy high class support, more control over your reviews, half rating, templates, shortcodes, widgets, and more! <br/><br/> <b><a class="button-primary" href="https://wprichsnippets.com/" title="WPRichSnippets Plugin" target="_blank">Click here for more info</a></b></p></div>';
 
 		echo '<form method="post" action="options.php">';
 		settings_fields('wpar_plugin_options');

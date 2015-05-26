@@ -3,10 +3,10 @@ Contributors: hishaman
 Donate link: http://authorhreview.com/about/donate/
 Tags: hreview, aggregate rating, author reviews, editor reviews, product reviews, reviews, author, editor, rating, rich snippets, review website, schema, google, seo, search engine optimization, microformat, microformats, snippets, snippet, google rich snippets, widget, search result, search engine, search, product reviews, rating stars
 Requires at least: 3.0
-Tested up to: 4.1.1
-Stable tag: 0.0.9.5
+Tested up to: 4.2.2
+Stable tag: 0.0.9.6
 
-Add Google Rich Snippets for reviews and rating based on schema.org for a better WordPress SEO, more search traffic and conversion.
+Add Google Rich Snippets for reviews based on schema.org for a better WordPress SEO, customize search results with rating stars for more traffic and conversion.
 
 == Description ==
 Add hReview and AggregateRating support based on schema.org, which help you increase search traffic by making SERP results more eye-catching. This plugin supports only the editorial ratings submission (editor/author rating), this means customers and site visitors are not involved in the rating or review process, this means rating reflects only the author's opinion. This plugin is written by [Hesham Zebida](http://zebida.com/).
@@ -15,11 +15,9 @@ Add hReview and AggregateRating support based on schema.org, which help you incr
 > There is also a [premium version](http://authorhreview.com/plugins/author-hreview/) of the plugin that gives you more features, templates and control over your reviews.
 
 > <strong>More Advanced Plugins</strong><br>
-> We recommend the all new [WP Rich Snippets](http://authorhreview.com/plugins/wp-rich-snippets/) plugin, more schema.org types plus awesome [add-on plugins](http://authorhreview.com/addons/) that extends its functionality.
+> Looking for more functionality? We recommend the all new [WPRichSnippets](https://wprichsnippets.com/) plugin, more schema.org types plus awesome [add-on plugins](https://wprichsnippets.com/addons/) that extends the WPRichSnippets pluginÕs functionality. View the [plugin documentation](https://wprichsnippets.com/docs/) pages and [Showcase Gallery](http://authorhreview.com/showcase/).
 
-> View the WP Rich Snippets [plugin documentation](http://authorhreview.com/documentation/) pages and [Showcase Gallery](http://authorhreview.com/showcase/).
-
-> View [Live Demo](http://demo.authorhreview.com/).
+> View [WPRichSnippets Live Demo](http://demo.wprichsnippets.com/wprs/).
 
 = Why You Should Implement Rich Snippets =
 According to Google, rich snippets "extract and show more useful information from web pages than the preview text that you are used to seeing." Significantly, Google is using structured data open standards such as microformats and RDFa to power the rich snippets feature. Google is is inviting publishers to mark up their HTML. Webmasters can find more detailed information about Google's rich snippets [here](http://googlewebmastercentral.blogspot.com/2011/12/rich-snippets-instructional-videos.html).
@@ -43,13 +41,20 @@ Markup up posts for editor/author reviews and star rating based on schema.org, i
 = Is it going to work with my WordPress Theme? =
 It should work with any WordPress theme, however if you have trouble in the layout or the way the rating box or recent reviews widget are showing, let us know and we will help you fix the display.
 
-= Is these any documentation for this plugin? =
+= Is there any documentation for this plugin? =
 Yes, here is a link to the [plugin documentation](http://authorhreview.com/docs/all/).
 
 = Do you have a FAQ page? =
 You'll find more on the [FAQ on AuthorhReview.com](http://authorhreview.com/faq/).
 
 == Changelog ==
+
+= 0.0.9.6 =
+
+Release Date: May 26th, 2015
+
+* Fixed a summary paragraphs.
+* Modifies readme.txt file.
 
 = 0.0.9.5 =
 
