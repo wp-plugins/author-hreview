@@ -15,7 +15,7 @@ Add hReview and AggregateRating support based on schema.org, which help you incr
 > There is also a [premium version](http://authorhreview.com/plugins/author-hreview/) of the plugin that gives you more features, templates and control over your reviews.
 
 > <strong>More Advanced Plugins</strong><br>
-> Looking for more functionality? We recommend the all new [WPRichSnippets](https://wprichsnippets.com/) plugin, more schema.org types plus awesome [add-on plugins](https://wprichsnippets.com/addons/) that extends the WPRichSnippets pluginÕs functionality. View the [plugin documentation](https://wprichsnippets.com/docs/) pages and [Showcase Gallery](http://authorhreview.com/showcase/).
+> Looking for more functionality? We recommend the all new [WPRichSnippets](https://wprichsnippets.com/) plugin, more schema.org types plus awesome [add-on plugins](https://wprichsnippets.com/addons/) that extends the WPRichSnippets plugin functionality. View the [plugin documentation](https://wprichsnippets.com/docs/) pages and [Showcase Gallery](http://authorhreview.com/showcase/).
 
 > View [WPRichSnippets Live Demo](http://demo.wprichsnippets.com/wprs/).
 
